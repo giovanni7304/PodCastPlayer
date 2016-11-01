@@ -12,6 +12,7 @@
 		86576D7B1DC83BEB00FF5AEA /* Pod_Player.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86576D791DC83BEB00FF5AEA /* Pod_Player.xcdatamodeld */; };
 		86576D7D1DC83BEB00FF5AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86576D7C1DC83BEB00FF5AEA /* Assets.xcassets */; };
 		86576D801DC83BEB00FF5AEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86576D7E1DC83BEB00FF5AEA /* Main.storyboard */; };
+		86576D881DC8405500FF5AEA /* PodCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86576D871DC8405500FF5AEA /* PodCastViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		86576D7C1DC83BEB00FF5AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86576D7F1DC83BEB00FF5AEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86576D811DC83BEB00FF5AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86576D871DC8405500FF5AEA /* PodCastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodCastViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				86576D751DC83BEB00FF5AEA /* AppDelegate.swift */,
 				86576D771DC83BEB00FF5AEA /* ViewController.swift */,
+				86576D871DC8405500FF5AEA /* PodCastViewController.swift */,
 				86576D7C1DC83BEB00FF5AEA /* Assets.xcassets */,
 				86576D7E1DC83BEB00FF5AEA /* Main.storyboard */,
 				86576D811DC83BEB00FF5AEA /* Info.plist */,
@@ -139,6 +142,7 @@
 				86576D781DC83BEB00FF5AEA /* ViewController.swift in Sources */,
 				86576D7B1DC83BEB00FF5AEA /* Pod_Player.xcdatamodeld in Sources */,
 				86576D761DC83BEB00FF5AEA /* AppDelegate.swift in Sources */,
+				86576D881DC8405500FF5AEA /* PodCastViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
