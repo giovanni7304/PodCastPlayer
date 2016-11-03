@@ -724,7 +724,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="zck-xh-Tve"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="PodCast URL" drawsBackground="YES" id="fkd-Zz-RNh">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="http://www.espn.com/espnradio/podcast/feeds/itunes/podCast?id=2406595" placeholderString="PodCast URL" drawsBackground="YES" id="fkd-Zz-RNh">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -756,7 +756,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="pIj-BV-dGv">
+                                                        <tableCellView identifier="podcastcell" id="pIj-BV-dGv">
                                                             <rect key="frame" x="1" y="1" width="190" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -777,6 +777,10 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="l1Q-VH-Ccl" id="Rz9-hJ-svf"/>
+                                                <outlet property="delegate" destination="l1Q-VH-Ccl" id="aDD-iU-7P4"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                 </clipView>
@@ -809,6 +813,7 @@
                     </view>
                     <connections>
                         <outlet property="podcastsURLTextField" destination="tc7-Yf-jdZ" id="vIH-bu-zcO"/>
+                        <outlet property="tableView" destination="Hu6-y8-upD" id="wbC-80-VzC"/>
                     </connections>
                 </viewController>
                 <customObject id="Rll-l7-utX" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

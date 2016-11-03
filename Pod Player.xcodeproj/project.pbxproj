@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		86576D761DC83BEB00FF5AEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86576D751DC83BEB00FF5AEA /* AppDelegate.swift */; };
-		86576D781DC83BEB00FF5AEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86576D771DC83BEB00FF5AEA /* ViewController.swift */; };
 		86576D7B1DC83BEB00FF5AEA /* Pod_Player.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86576D791DC83BEB00FF5AEA /* Pod_Player.xcdatamodeld */; };
 		86576D7D1DC83BEB00FF5AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86576D7C1DC83BEB00FF5AEA /* Assets.xcassets */; };
 		86576D801DC83BEB00FF5AEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86576D7E1DC83BEB00FF5AEA /* Main.storyboard */; };
 		86576D881DC8405500FF5AEA /* PodCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86576D871DC8405500FF5AEA /* PodCastViewController.swift */; };
+		86576D8A1DC96F5900FF5AEA /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86576D891DC96F5900FF5AEA /* Parser.swift */; };
+		86576D8D1DC9775400FF5AEA /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86576D8B1DC9775400FF5AEA /* SWXMLHash.swift */; };
+		86576D8E1DC9775400FF5AEA /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86576D8C1DC9775400FF5AEA /* SWXMLHash+TypeConversion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		86576D721DC83BEB00FF5AEA /* Pod Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pod Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86576D751DC83BEB00FF5AEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		86576D771DC83BEB00FF5AEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		86576D7A1DC83BEB00FF5AEA /* Pod_Player.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pod_Player.xcdatamodel; sourceTree = "<group>"; };
 		86576D7C1DC83BEB00FF5AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86576D7F1DC83BEB00FF5AEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86576D811DC83BEB00FF5AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86576D871DC8405500FF5AEA /* PodCastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodCastViewController.swift; sourceTree = "<group>"; };
+		86576D891DC96F5900FF5AEA /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		86576D8B1DC9775400FF5AEA /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
+		86576D8C1DC9775400FF5AEA /* SWXMLHash+TypeConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SWXMLHash+TypeConversion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +61,24 @@
 			isa = PBXGroup;
 			children = (
 				86576D751DC83BEB00FF5AEA /* AppDelegate.swift */,
-				86576D771DC83BEB00FF5AEA /* ViewController.swift */,
 				86576D871DC8405500FF5AEA /* PodCastViewController.swift */,
+				86576D891DC96F5900FF5AEA /* Parser.swift */,
+				86576D8F1DC9775C00FF5AEA /* SWXMLHash */,
 				86576D7C1DC83BEB00FF5AEA /* Assets.xcassets */,
 				86576D7E1DC83BEB00FF5AEA /* Main.storyboard */,
 				86576D811DC83BEB00FF5AEA /* Info.plist */,
 				86576D791DC83BEB00FF5AEA /* Pod_Player.xcdatamodeld */,
 			);
 			path = "Pod Player";
+			sourceTree = "<group>";
+		};
+		86576D8F1DC9775C00FF5AEA /* SWXMLHash */ = {
+			isa = PBXGroup;
+			children = (
+				86576D8B1DC9775400FF5AEA /* SWXMLHash.swift */,
+				86576D8C1DC9775400FF5AEA /* SWXMLHash+TypeConversion.swift */,
+			);
+			name = SWXMLHash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +153,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86576D781DC83BEB00FF5AEA /* ViewController.swift in Sources */,
+				86576D8D1DC9775400FF5AEA /* SWXMLHash.swift in Sources */,
 				86576D7B1DC83BEB00FF5AEA /* Pod_Player.xcdatamodeld in Sources */,
+				86576D8A1DC96F5900FF5AEA /* Parser.swift in Sources */,
 				86576D761DC83BEB00FF5AEA /* AppDelegate.swift in Sources */,
+				86576D8E1DC9775400FF5AEA /* SWXMLHash+TypeConversion.swift in Sources */,
 				86576D881DC8405500FF5AEA /* PodCastViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
