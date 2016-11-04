@@ -9,7 +9,7 @@
 import Cocoa
 
 class PodCastViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
-
+    
     @IBOutlet weak var podcastsURLTextField: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
     
@@ -41,6 +41,24 @@ class PodCastViewController: NSViewController, NSTableViewDataSource, NSTableVie
         }
     }
     
+    func podcastExists(rssURL: String) -> Bool {
+        if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext {
+            
+            let fetchy = Podcasts.fetchRequest() as NSFetchRequest<Podcasts>
+            fetchy.predicate = NSPredicate(format: "rssURL == %@", rssURL)
+            
+            do {
+                let matchingPodcasts = try context.fetch(fetchy)
+                
+                if matchingPodcasts.count >= 1 {
+                    return true
+                } else {
+                    return false
+                }
+            } catch {}
+        }
+        return false
+    }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return podCasts.count
@@ -70,21 +88,24 @@ class PodCastViewController: NSViewController, NSTableViewDataSource, NSTableVie
                         let parser = Parser()
                         let info = parser.getPodcastMetaData(data: data!)
                         
-                        if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext {
+                        if self.podcastExists(rssURL: self.podcastsURLTextField.stringValue) {
                             
-                            let podcast = Podcasts(context: context)
-                            
-                            podcast.rssURL = self.podcastsURLTextField.stringValue
-                            podcast.imageURL = info.imageURL
-                            podcast.title = info.title
-                            
-                            (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
-                            
-                            self.getPodcasts()
+                            if let context = (NSApplication.shared().delegate as? AppDelegate)?.managedObjectContext {
+                                
+                                let podcast = Podcasts(context: context)
+                                
+                                podcast.rssURL = self.podcastsURLTextField.stringValue
+                                podcast.imageURL = info.imageURL
+                                podcast.title = info.title
+                                
+                                (NSApplication.shared().delegate as? AppDelegate)?.saveAction(nil)
+                                
+                                self.getPodcasts()
+                            }
                         }
                     }
                 }
-            }.resume()
+                }.resume()
             podcastsURLTextField.stringValue = ""
         }
     }
